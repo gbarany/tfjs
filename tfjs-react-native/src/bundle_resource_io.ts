@@ -52,6 +52,7 @@ class BundleResourceHandler implements io.IOHandler {
    */
   async load(): Promise<io.ModelArtifacts> {
     const weightsAssets = this.modelWeightsId.map(id => Asset.fromModule(id));
+    console.log("hello world")
     if (weightsAssets[0].uri.match('^http')) {
       // In debug/dev mode RN will serve these assets over HTTP
       return this.loadViaHttp(weightsAssets);
